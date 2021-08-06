@@ -6,15 +6,23 @@
       "description": "Some additional details about the website",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-08-06T10:49:11-07:00"
+      "last_modified": "2021-08-06T11:04:29-07:00"
+    },
+    {
+      "path": "CV.html",
+      "title": "My cool CV",
+      "description": "work experience ",
+      "author": [],
+      "contents": "\n\n\nggplot(data = diamonds, aes(x = carat, y = price)) +\n  geom_point(aes(color = price))\n\n\n\n\n\n\n\n",
+      "last_modified": "2021-08-06T11:08:01-07:00"
     },
     {
       "path": "index.html",
       "title": "My Website",
-      "description": "I'm using distill Welcome to the website. I hope you enjoy it!",
+      "description": "Welcome to the website. I hope you enjoy it!",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-08-06T10:49:11-07:00"
+      "last_modified": "2021-08-06T11:04:30-07:00"
     }
   ],
   "collections": []
