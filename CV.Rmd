@@ -1,17 +1,11 @@
 ---
-title: "My cool CV"
-description: | 
- work experience
+title: "cv"
+description: |
+  Some additional details about the website
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-
-library(tidyverse)
+knitr::opts_chunk$set(echo = FALSE)
 ```
 
-```{r}
-ggplot(data = diamonds, aes(x = carat, y = price)) +
-  geom_point(aes(color = price))
-```
-
+vuggghhjhjjhhhj
