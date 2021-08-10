@@ -1,7 +1,7 @@
 ---
 title: "My cool CV"
-description: |
- work experience 
+description: | 
+ work experience
 ---
 
 ```{r setup, include=FALSE}
