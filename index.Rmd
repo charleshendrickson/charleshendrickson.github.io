@@ -1,6 +1,6 @@
 ---
 title: "Charles Hendrickson"
-image: "Charles Portrait.png"
+image: "CharlesPortrait.png"
 links:
   - label: LinkedIn
     url: "https://linkedin.com/"
@@ -11,8 +11,21 @@ links:
   - label: Email
     url: "mailto:email@email.com"
 output:
-  postcards::onofre
+  postcards::jolla
 site: distill::distill_website
 ---
  
-I pursuing my Master of Environmental Data Science at UCSB. 
+I am pursuing my Master's of Environmental Data Science at UCSB. 
+
+
+
+
+
+
+
+
+
+
+
+
+

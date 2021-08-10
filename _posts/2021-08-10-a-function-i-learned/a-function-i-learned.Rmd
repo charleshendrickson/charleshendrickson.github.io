@@ -1,0 +1,29 @@
+---
+title: "a-function-i-learned"
+description: |
+  A short description of the post.
+author:
+  - name: Charles Hendrickson
+    url: {}
+date: 08-10-2021
+output:
+  distill::distill_article:
+    self_contained: false
+preview: images/CharlesPortrait.png
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(palmerpenguins)
+
+```
+
+```{r}
+
+
+```
+
+
+
