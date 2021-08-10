@@ -6,14 +6,14 @@
       "description": "Some additional details about the website",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-08-10T15:58:43-07:00"
+      "last_modified": "2021-08-10T16:02:58-07:00"
     },
     {
       "path": "blog.html",
       "title": "My blog",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-08-10T15:58:44-07:00"
+      "last_modified": "2021-08-10T16:02:58-07:00"
     },
     {
       "path": "cv.html",
@@ -21,14 +21,14 @@
       "description": "work experience",
       "author": [],
       "contents": "\n\n\nggplot(data = diamonds, aes(x = carat, y = price)) +\n  geom_point(aes(color = price))\n\n\n\n\n\n\n\n",
-      "last_modified": "2021-08-10T15:58:48-07:00"
+      "last_modified": "2021-08-10T16:03:02-07:00"
     },
     {
       "path": "index.html",
       "title": "Charles Hendrickson",
       "author": [],
       "contents": "\n\n          \n          \n          My Website\n          \n          \n          Bananas\n          Zennie\n          My CV\n          My blog\n          ☰\n          \n          \n      \n        \n          \n            Charles Hendrickson\n          \n          \n            \n              I am pursuing my Master’s of Environmental Data Science at UCSB.\n            \n            \n              I am pursuing my Master’s of Environmental Data Science at UCSB.\n            \n          \n\n          \n            \n              \n                  \n                    \n                      LinkedIn\n                    \n                  \n                \n                                \n                  \n                    \n                      Twitter\n                    \n                  \n                \n                                \n                  \n                    \n                      GitHub\n                    \n                  \n                \n                                \n                  \n                    \n                      Email\n                    \n                  \n                \n                              \n          \n\n          \n            \n              \n                                \n                  \n                    LinkedIn\n                  \n                \n                                \n                  \n                    Twitter\n                  \n                \n                                \n                  \n                    GitHub\n                  \n                \n                                \n                  \n                    Email\n                  \n                \n                              \n            \n          \n        \n      \n    \n\n    \n    \n    ",
-      "last_modified": "2021-08-10T15:58:48-07:00"
+      "last_modified": "2021-08-10T16:03:02-07:00"
     }
   ],
   "collections": ["posts/posts.json"]
