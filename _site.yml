@@ -5,11 +5,11 @@ description: |
 output_dir: "docs"
 navbar:
   right:
-    - text: "Bananas"
+    - text: "About me"
       href: index.html
-    - text: "Zennie"
+    - text: "My work"
       href: about.html
-    - text: "CV"
+    - text: "My CV"
       href: cv.html
     - text: "My blog"
       href: blog.html

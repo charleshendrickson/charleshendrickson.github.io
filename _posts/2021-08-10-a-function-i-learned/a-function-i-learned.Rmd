@@ -1,7 +1,7 @@
 ---
-title: "a-function-i-learned"
+title: "Cool functions I have learned"
 description: |
-  A short description of the post.
+  I learned how to use filter(), select(), mutate(), group_by (), and summarize() functions to wrangle data. 
 author:
   - name: Charles Hendrickson
     url: {}

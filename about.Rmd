@@ -1,7 +1,7 @@
 ---
 title: "About this site"
 description: |
-  Some additional details about the website
+  This website is devoted to showing my progression as an environmental data scientist. 
 ---
 
 ```{r setup, include=FALSE}

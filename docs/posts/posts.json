@@ -1,8 +1,8 @@
 [
   {
     "path": "posts/2021-08-10-a-function-i-learned/",
-    "title": "a-function-i-learned",
-    "description": "A short description of the post.",
+    "title": "Cool functions I have learned",
+    "description": "I learned how to use filter(), select(), mutate(), group_by (), and summarize() functions to wrangle data.",
     "author": [
       {
         "name": "Charles Hendrickson",
@@ -13,8 +13,8 @@
     "categories": [],
     "contents": "\n\n\n\n\n\n\n",
     "preview": "posts/2021-08-10-a-function-i-learned/images/CharlesPortrait.png",
-    "last_modified": "2021-08-10T10:50:22-07:00",
-    "input_file": {}
+    "last_modified": "2021-08-17T12:04:10-07:00",
+    "input_file": "a-function-i-learned.knit.md"
   },
   {
     "path": "posts/2021-08-10-hello/",
