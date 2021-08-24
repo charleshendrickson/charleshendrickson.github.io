@@ -15,7 +15,7 @@ output:
 site: distill::distill_website
 ---
  
-I am pursuing a Master of Environmental Data Science at UCSB. 
+I am pursuing my Master's of Environmental Data Science at UC Santa Barbara. 
 
 
 
