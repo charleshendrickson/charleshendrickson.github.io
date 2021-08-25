@@ -3,17 +3,17 @@
     {
       "path": "about.html",
       "title": "About this site",
-      "description": "Some additional details about the website",
+      "description": "This website is devoted to showing my progression as an environmental data scientist. ",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-08-10T18:16:26-07:00"
+      "last_modified": "2021-08-25T16:58:29+00:00"
     },
     {
       "path": "blog.html",
       "title": "My blog",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-08-10T18:16:27-07:00"
+      "last_modified": "2021-08-25T16:58:29+00:00"
     },
     {
       "path": "cv.html",
@@ -21,14 +21,14 @@
       "description": "Some additional details about the website",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-08-10T18:16:27-07:00"
+      "last_modified": "2021-08-25T16:58:29+00:00"
     },
     {
       "path": "index.html",
       "title": "Charles Hendrickson",
       "author": [],
-      "contents": "\n\n          \n          \n          My Website\n          \n          \n          Bananas\n          Zennie\n          CV\n          My blog\n          ☰\n          \n          \n      \n        \n          \n            Charles Hendrickson\n          \n          \n            \n              I am pursuing my Master’s of Environmental Data Science at UCSB.\n            \n            \n              I am pursuing my Master’s of Environmental Data Science at UCSB.\n            \n          \n\n          \n            \n              \n                  \n                    \n                      LinkedIn\n                    \n                  \n                \n                                \n                  \n                    \n                      Twitter\n                    \n                  \n                \n                                \n                  \n                    \n                      GitHub\n                    \n                  \n                \n                                \n                  \n                    \n                      Email\n                    \n                  \n                \n                              \n          \n\n          \n            \n              \n                                \n                  \n                    LinkedIn\n                  \n                \n                                \n                  \n                    Twitter\n                  \n                \n                                \n                  \n                    GitHub\n                  \n                \n                                \n                  \n                    Email\n                  \n                \n                              \n            \n          \n        \n      \n    \n\n    \n    \n    ",
-      "last_modified": "2021-08-10T18:16:27-07:00"
+      "contents": "\n\n          \n          \n          My Website\n          \n          \n          About me\n          My work\n          My CV\n          My blog\n          ☰\n          \n          \n      \n        \n          \n            Charles Hendrickson\n          \n          \n            \n              I graduated from UC Santa Cruz with a Bachelor of Science in Marine Biology in 2021. I am currently pursuing a Master’s of Environmental Data Science at UC Santa Barbara.\n            \n            \n              I graduated from UC Santa Cruz with a Bachelor of Science in Marine Biology in 2021. I am currently pursuing a Master’s of Environmental Data Science at UC Santa Barbara.\n            \n          \n\n          \n            \n              \n                  \n                    \n                      LinkedIn\n                    \n                  \n                \n                                \n                  \n                    \n                      Twitter\n                    \n                  \n                \n                                \n                  \n                    \n                      GitHub\n                    \n                  \n                \n                                \n                  \n                    \n                      Email\n                    \n                  \n                \n                              \n          \n\n          \n            \n              \n                                \n                  \n                    LinkedIn\n                  \n                \n                                \n                  \n                    Twitter\n                  \n                \n                                \n                  \n                    GitHub\n                  \n                \n                                \n                  \n                    Email\n                  \n                \n                              \n            \n          \n        \n      \n    \n\n    \n    \n    ",
+      "last_modified": "2021-08-25T16:58:29+00:00"
     }
   ],
   "collections": ["posts/posts.json"]
