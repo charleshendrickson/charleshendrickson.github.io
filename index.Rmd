@@ -1,21 +1,36 @@
 ---
 title: "Charles Hendrickson"
-image: "CharlesPortrait.png"
+image: "personal_website_portrait.jpeg"
 links:
-  - label: LinkedIn
-    url: "https://linkedin.com/"
-  - label: Twitter
-    url: "https://twitter.com/"
-  - label: GitHub
-    url: "https://github.com/"
-  - label: Email
-    url: "mailto:email@email.com"
+  - label: '<i class="fab fa-linkedin"></i> LinkedIn'
+    url: "https://www.linkedin.com/in/charles-hendrickson-0001a0223/"
+  - label: '<i class="fab fa-twitter"></i> Twitter'
+    url: "https://twitter.com/charles_hendri_"
+  - label: '<i class="fab fa-github"></i> GitHub'
+    url: "https://github.com/charleshendrickson"
+  - label: '<i class="fa fa-envelope" aria-hidden="true"></i> Email'
+    url: "c_d_h@bren.ucsb.edu"
 output:
-  postcards::jolla
+  postcards::trestles
 site: distill::distill_website
 ---
- 
-I am pursuing my Master's of Environmental Data Science at UCSB. 
+
+### Hello 👋
+🌱 I'm Charles. I'm a Master's of Environmental Data Science (MEDS) student at the Bren School of Environmental Science and Management at UC Santa Barbara. My interests are studying marine biology and leveraging technology to better monitor the ocean. With my MEDS degree, I hope to advance scientific knowledge by extracting value from data and utilizing new technologies to monitor, model, and manage the Earth’s marine ecosystems at the same scale as the problems we face. 
+
+
+---------------------------------------------------------------------------------------------
+
+### Education
+- BS (2021): Marine Biology (University of California, Santa Cruz) 
+
+---------------------------------------------------------------------------------------------
+
+### Marine and Data Science Experience
+ - (06/20 - 08/20): Scripps Institution of Oceanography Undergraduate Research Fellowship
+ - (01/20 - 03/20): National Marine Fisheries Service Internship (NOAA Fisheries Ecology Division)
+ - (08/19 - 09/19): R/V Sikuliaq Student Crew Memeber - Science, Technology, Engineering And Math Student Experiences Aboard Ships 
+ - (06/19 - 07/19): Volunteer Research Diver, Fiji Marine Conservation Expedition (Global Visions International)
 
 
 

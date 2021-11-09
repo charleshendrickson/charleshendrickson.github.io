@@ -1,17 +1,19 @@
 name: "charleshendrickson.github.io"
-title: "My Website"
+title: "Charles Hendrickson"
+theme: theme.css
 description: |
-  My Website
+  Charles Hendrickson
 output_dir: "docs"
 navbar:
   right:
-    - text: "About me"
+    - text: "About"
       href: index.html
-    - text: "My work"
+    - text: "MEDS Program"
       href: about.html
-    - text: "My CV"
+    - text: "Resume"
       href: cv.html
-    - text: "My blog"
+    - text: "Blog"
       href: blog.html
+  source_url: https://github.com/charleshendrickson/charleshendrickson.github.io
 output: distill::distill_article
 
