@@ -13,7 +13,11 @@
     "categories": [],
     "contents": "\n\n\n\n\n\n\n",
     "preview": "posts/2021-08-10-a-function-i-learned/images/CharlesPortrait.png",
+<<<<<<< HEAD
     "last_modified": "2021-08-17T12:04:10-07:00",
+=======
+    "last_modified": "2021-08-24T23:05:58+00:00",
+>>>>>>> dfe5866a67e5c2fde81df9f65d996046bbeaea2c
     "input_file": {}
   },
   {
@@ -30,7 +34,7 @@
     "categories": [],
     "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-08-10T10:23:16-07:00",
+    "last_modified": "2021-08-24T23:05:58+00:00",
     "input_file": {}
   }
 ]
