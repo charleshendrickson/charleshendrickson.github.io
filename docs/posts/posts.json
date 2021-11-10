@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2021-08-10-hello/",
+    "title": "Sea Surface Temperature (SST) based data analysis",
+    "description": "Investigating marine heat waves by combining spatial subsetting with a carefully constructed for loop.",
+    "author": [
+      {
+        "name": "Charles Hendrickson",
+        "url": {}
+      }
+    ],
+    "date": "2021-11-09",
+    "categories": [],
+    "contents": "\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-11-10T11:33:39-08:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/2021-08-10-a-function-i-learned/",
     "title": "Climate Resilient Coral Modeling (CRCM)",
     "description": "For my class EDS220: Remote Sensing and Environmental Data, my team members and I are investigating how to predict heat stress and bleaching levels of heat tolerant corals in Honoliʻi, Hawaiʻi under three different future sea surface temperature scenarios. Using the NOAA Coral Reef Watch Dataset, our team will explore the hypothesis that a symbiotic relationship exists between corals and algae in Honoliʻi that allows the corals to survive in waters 1.5 degrees celsius above the normal bleaching threshold. Modeling the response of heat resistant corals to warming sea surface temperatures will help inform coral reef conservation strategies and policies in Honoliʻi that can potentially be applied throughout Hawaiʻi.",
@@ -14,23 +31,6 @@
     "contents": "\n\n\n\n",
     "preview": {},
     "last_modified": "2021-11-10T11:02:36-08:00",
-    "input_file": {}
-  },
-  {
-    "path": "posts/2021-08-10-hello/",
-    "title": "My First Blog Post",
-    "description": "Something really important",
-    "author": [
-      {
-        "name": "Charles Hendrickson",
-        "url": {}
-      }
-    ],
-    "date": "2021-08-10",
-    "categories": [],
-    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
-    "preview": {},
-    "last_modified": "2021-08-10T10:23:16-07:00",
     "input_file": {}
   }
 ]
