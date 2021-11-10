@@ -1,11 +1,12 @@
 ---
 title: "Resume"
 description: |
-  Some additional details about the website
+  
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-[**Download CV**](personal_website_resume.pdf)
+[**Download CV**](CV/personal_website_resume.pdf)
+
