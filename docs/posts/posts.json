@@ -1,19 +1,19 @@
 [
   {
     "path": "posts/2021-08-10-a-function-i-learned/",
-    "title": "Cool functions I have learned",
-    "description": "I learned how to use filter(), select(), mutate(), group_by (), and summarize() functions to wrangle data.",
+    "title": "Climate Resilient Coral Modeling (CRCM)",
+    "description": "For my class EDS220: Remote Sensing and Environmental Data, my team members and I are investigating how to predict heat stress and bleaching levels of heat tolerant corals in Honoliʻi, Hawaiʻi under three different future sea surface temperature scenarios. Using the NOAA Coral Reef Watch Dataset, our team will explore the hypothesis that a symbiotic relationship exists between corals and algae in Honoliʻi that allows the corals to survive in waters 1.5 degrees celsius above the normal bleaching threshold. Modeling the response of heat resistant corals to warming sea surface temperatures will help inform coral reef conservation strategies and policies in Honoliʻi that can potentially be applied throughout Hawaiʻi.",
     "author": [
       {
         "name": "Charles Hendrickson",
         "url": {}
       }
     ],
-    "date": "2021-08-10",
+    "date": "2021-11-08",
     "categories": [],
-    "contents": "\n\n\n\n\n\n\n",
-    "preview": "posts/2021-08-10-a-function-i-learned/images/CharlesPortrait.png",
-    "last_modified": "2021-08-17T12:04:10-07:00",
+    "contents": "\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-11-10T11:02:36-08:00",
     "input_file": {}
   },
   {
