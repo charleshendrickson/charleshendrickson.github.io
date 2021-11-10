@@ -9,7 +9,7 @@ links:
   - label: '<i class="fab fa-github"></i> GitHub'
     url: "https://github.com/charleshendrickson"
   - label: '<i class="fa fa-envelope" aria-hidden="true"></i> Email'
-    url: "c_d_h@bren.ucsb.edu"
+    url: "mailto:c_d_h@bren.ucsb.edu"
 output:
   postcards::trestles
 site: distill::distill_website
