@@ -137,6 +137,7 @@ $$H_{0}: \mu_{ForkLengthCold} - \mu_{ForkLengthWarm} = 0$$
 
 **Alternative hypothesis**
 $$H_{A}: \mu_{ForkLengthCold} - \mu_{ForkLengthWarm} \neq 0$$
+
 # Visualize data  
 
 Scatter plot showing changes in juvenile Chinook salmon fork length ($y$-axis) as it relates to water temperature ($x$-axis).
@@ -217,7 +218,7 @@ point_est
 
 ```
 
-$$PointEstimate =  \mu_{ForkLengthWarm} - \mu_{ForkLengthCold}$$
+$$PointEstimate =  {MeanForkLengthWarm} - {MeanForkLengthCold}$$
 The point estimate for the difference in mean fork lengths for warm water sites versus cold water sites is 7.057725 mm. However, this value could just be a difference in the samples due to random variability. Thus, I must calculate a measure of variability using a t-test. 
 
 ```{r}
@@ -289,14 +290,14 @@ Since $p-value = 2.2e-16 < 0.05$ we reject the null that there is no difference 
 
 # Conclusion and Next Steps
 
-Based on the findings of my analysis, the mean fork length of juvenile Chinook salmon in the San Francisco Estuary does significantly differ at sample sites with colder water temperatures compared to warmer water temperatures. The p-value from my linear regression was small enough to reject the null hypothesis that there is no effect of water temperature on fork length. 
+Based on the findings of my analysis, the mean fork length of juvenile Chinook salmon in the San Francisco Estuary does significantly differ at sample sites with colder water temperatures compared to warmer water temperatures. The p-value from my linear regression was small enough to reject the null hypothesis that there is no difference in the mean juvenile Chinook salmon fork length at sites with colder water temperatures versus sites with warmer water temperatures.
 
 In future analyses, I would investigate the difference the mean fork length of juvenile Chinook salmon at sites with high nutrient levels versus sites with low nutrient levels. Nutrient levels play a key role in determining the growth rate of juvenile Chinook salmon because insects and other food sources are often more abundant in rivers with warmer water water temperatures than colder water temperatures. Additionally, using a multiple linear regression to investigate the role that nutrient levels and water temperature have on the mean fork length of juvenile Chinook salmon could provide valuable information for the conservation and management of this threatened species.
 
 
 # Github
 
-The repository containing all of the code and data for this analysis can be found [here](https://github.com/charleshendrickson/charleshendrickson.github.io/tree/main/docs/posts/2021-08-10-hello). 
+The repository containing all of the code and data for this analysis can be found [here](https://github.com/charleshendrickson/charleshendrickson.github.io/tree/main/_posts/2021-12-02-juvenile-chinook-salmon-project). 
 
 
 # References 
