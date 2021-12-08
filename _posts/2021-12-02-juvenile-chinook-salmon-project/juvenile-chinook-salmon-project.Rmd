@@ -1,7 +1,7 @@
 ---
 title: "Water Temperature and Juvenile Chinook Salmon Fork Length in The San Francisco Estuary"
 description: |
-  Investigating whether the mean fork length of juvenile Chinook salmon in the San Francisco Estuary differs at sample sites with colder water temperatures compared to warmer water temperatures.
+  Investigating whether the mean fork length of juvenile Chinook salmon in the San Francisco Estuary differs at sample sites with colder mean water temperatures compared to warmer mean water temperatures.
 author:
   - name: Charles Hendrickson
 date: 12-02-2021
@@ -26,13 +26,13 @@ library(knitr)
 
 # Research Question
 
-The aim of this project is to investigate whether the mean fork length of juvenile Chinook salmon in the San Francisco Estuary differs at sample sites with colder water temperatures compared to warmer water temperatures. 
+The aim of this project is to investigate whether the mean fork length of juvenile Chinook salmon in the San Francisco Estuary differs at sample sites with colder mean water temperatures compared to warmer mean water temperatures. 
 
 # Introduction 
 
 Chinook salmon _Oncorhynchus tshawytscha_ are anadromous fish, which means they are born in freshwater rivers and migrate as juveniles to saltwater to feed, grow, and mature before returning to freshwater to spawn (NOAA Fisheries). They are vulnerable to many anthropogenic stressors, such as habitat degradation, blocked access to spawning grounds, and loss of genetic diversity from hatcheries. A particularly concerning stressor for Chinook salmon are changes in freshwater thermal regimes due to simplification of the physical structure of aquatic systems, reduced shading from the removal of riparian vegetation, and altered flow regimes from climate change and water diversion. (Richter & Kolmes, 2005). In a study that investigated the effects of three temperature regimes on juvenile Chinook salmon growth, it was found that juveniles reared at an elevated temperature range of 21–24°C experienced significantly decreased growth rates compared with juveniles reared at 13–16°C (Marine & Cech Jr, 2004). Furthermore, studies have found that juvenile Chinook salmon length is positively correlated with the survival and survival was markedly low among the smallest length class (that is, 80 mm to 89 mm) of subyearling Chinook salmon (Brown, Oldenburg & Seaburg et al., 2013). As California’s Chinook salmon populations become increasingly threatened by changes in freshwater thermal regimes and with increasing evidence suggesting that juvenile Chinook Salmon survival could be negatively impacted by decreased fork length, it is necessary to understand how the size of out-migrating juvenile Chinook salmon in the San Francisco Estuary may be impacted by the water temperature of their native rivers. 
 
-While previous studies have used controlled laboratory experiments to test the effects of water temperature on Chinook salmon growth, I will use a long-term fish monitoring dataset in my analysis to quantify the impact of water temperature on juvenile Chinook salmon fork length.
+While previous studies have used controlled laboratory experiments to test the effects of water temperature on Chinook salmon growth, I will use a long-term fish monitoring dataset in my analysis to quantify the impact of mean water temperature on the mean fork length of juvenile Chinook salmon.
 
 
 # Data Description and Collection
@@ -91,6 +91,17 @@ DJFMP_CHN_df <- DJFMP_CHN_df %>%
 ```
 
 
+```{r}
+# This data frame contains each Location's means fork length and water temp.
+DJFMP_CHN_df_mean <- DJFMP_CHN_df %>% 
+          group_by(Location) %>% 
+          summarise(
+            mean_fork_length = mean(ForkLength), 
+            mean_water_temp = mean(WaterTemp)) 
+
+```
+
+
 ```{r, fig.width=6, fig.height=3, fig.cap="Fork length of juvenile Chinook salmon in San Francisco Estuary from 1976 to 2021."}
 # Plot juvenile Chinook salmon fork length over time
 ggplot(data = DJFMP_CHN_df, aes(x = SampleDate, y = ForkLength)) +
@@ -119,11 +130,23 @@ San Francisco Estuary (1976-2021)",
 
 # Analysis
 
-I will conduct a hypothesis test to determine if there is a difference in the mean juvenile Chinook salmon fork length (mm) across sites with warmer or colder than average water temperatures in the San Francisco Estuary. Specifically, I will use a linear regression to see if water temperature affects fork length. 
+I will conduct a hypothesis test to determine if there is a difference in the mean fork length of juvenile Chinook salmon across sites with warmer mean water temperatures compared to sites with colder mean water temperatures in the San Francisco Estuary. Specifically, I will use a linear regression to see if mean water temperature affects mean fork length. 
 
-First, I will define my null and alternative hypotheses. Second, I will collect and filter my data for location, sample date, fork length, water temperature, method code, and count. The data must be in tidy format so I will use the `uncount()` function to turn the 'Count' column into duplicate rows so that each row represents one observation. To clean the data I will drop NA values from the water temperature column and exclude any adult Chinook salmon samples by removing fork length values greater than 250mm. I will also remove all fork length values of zero mm because these are faulty samples that do not represent real fish. After visualizing the relationship between water temperature and fork length, 
-I will calculate the mean water temperature across all samples and then filter for water temperatures above and below the mean water temperature. This method of subsetting should give a simple, unbiased  
-determination of whether the sample is from a warmer or colder site. Then, I will take the mean fork length of the warm and cold sites and compute a point estimate of the difference between the mean fork length of juvenile Chinook salmon that are reared in warmer than average sites versus colder than average sites. Fourth, I will conduct a t-test to measure the variability of the sample statistic and ensure that my point estimate is just a difference in the samples due to random variability. Fifth, I will quantify the probability that the sample statistic differs from the null hypothesis by running a linear regression of water temperature on fork length. Finally, based on my p-value, I will reject or fail to reject my null hypothesis. 
+First, I will define my null and alternative hypotheses. Second, I will collect and filter my data for location, sample date, fork length, water temperature, method code, and count. The data must be in tidy format so I will use the `uncount()` function to turn the 'Count' column into duplicate rows so that each row represents one observation. To clean the data I will drop NA values from the water temperature column and exclude any adult Chinook salmon samples by removing fork length values greater than 250mm. I will also remove all fork length values of zero mm because these are faulty samples that do not represent real fish. 
+
+
+Third, I will visualize the general relationship between water temperature and fork length before beginning my analysis on the relationship between mean water temperature and mean fork length. I think it is important to get a understanding of the raw data and show where the majority of the data lies. 
+
+
+Fourth, I will then compute the point estimate by:
+1) Calculating the mean water temperature across all samples in the data.
+2) Calculating the mean water temperature and mean fork length of each site/location.
+3) Filtering for sites with mean water temperature above or below the mean water temperature across all samples (gives us warm water and cold water sites). 
+4) Taking the difference between the mean fork length of the warm water sites and the mean fork length of cold water sites. 
+
+This will give me the difference between the mean fork length of juvenile Chinook salmon that are reared in warmer mean water temperatures compared to colder mean water temperatures.
+
+Fifth, I will conduct a t-test to measure the variability of the sample statistic and ensure that my point estimate is not just a difference in the samples due to random variability. Sixth, I will run a linear regression of mean water temperature on mean fork length. Finally, based on my p-value, I will reject or fail to reject my null hypothesis. 
 
 # Limitations
 
@@ -149,7 +172,7 @@ forklength_vs_watertemp <- ggplot(data = DJFMP_CHN_df,
   geom_point(size = 1) +
   labs(title = "Relationship Between Juvenile Chinook Salmon Fork Length 
 and Water Temperature",
-       x = "Water Temperature (degrees C) ",
+       x = "Water Temperature (°C)",
        y = "Fork Length (mm)") +
   theme_bw()
 
@@ -166,23 +189,23 @@ forklength_vs_watertemp_alpha <- ggplot(data = DJFMP_CHN_df,
   geom_point(alpha=0.1, size=1) +
   labs(title = "Relationship Between Juvenile Chinook Salmon Fork Length
 and Water Temperature",
-       x = "Water Temperature (degrees C) ",
+       x = "Water Temperature (°C)",
        y = "Fork Length (mm)") +
   theme_bw() 
 
 forklength_vs_watertemp_alpha
 ```
 
-Density plot with `geom_bin2d()` of juvenile Chinook salmon fork length ($y$-axis) as it relates to water temperature ($x$-axis).
+Heat map with `geom_bin2d()` of juvenile Chinook salmon fork length ($y$-axis) as it relates to water temperature ($x$-axis).
 
-```{r, fig.width=6, fig.height=3, fig.cap="The density of juvenile Chinook salmon fork length as it relates to water temperature at sample sites in the San Francisco Estuary from 1976 to 2021."}
+```{r, fig.width=6, fig.height=3, fig.cap="Heat map of juvenile Chinook salmon fork length as it relates to water temperature at sample sites in the San Francisco Estuary from 1976 to 2021."}
 forklength_vs_watertemp_density <- ggplot(data = DJFMP_CHN_df, 
                                   aes(x = WaterTemp, 
                                       y = ForkLength)) +
-  geom_bin2d() +
+  geom_bin2d(bins = 60) +
   labs(title = "Relationship Between Juvenile Chinook Salmon Fork Length 
 and Water Temperature",
-       x = "Water Temperature (degrees C)",
+       x = "Water Temperature (°C)",
        y = "Fork Length (mm)") +
   theme_bw()
 
@@ -228,83 +251,116 @@ cold_mean <- as.numeric(cold_mean)
 
 # Difference in mean fork lengths for cold water sites vs. warm water sites 
 point_est = as.numeric(warm_mean - cold_mean)
-point_est
-
+print(paste0("The point estimate is ", point_est ,"mm."))
 ```
 
 $$PointEstimate =  {MeanForkLengthWarm} - {MeanForkLengthCold}$$
-The point estimate for the difference in mean fork lengths for warm water sites versus cold water sites is 7.057725 mm. However, this value could just be a difference in the samples due to random variability. Thus, I must calculate a measure of variability using a t-test. 
+The point estimate for the difference in mean fork lengths for sites with warmer mean water temperatures versus colder mean water temperatures is 2.097824mm. However, this value could just be a difference in the samples due to random variability. Thus, I must calculate a measure of variability using a t-test. 
 
 ```{r}
-t.test(DJFMP_CHN_df$ForkLength[DJFMP_CHN_df$WaterTemp > mean_water_temp_overall], 
-       DJFMP_CHN_df$ForkLength[DJFMP_CHN_df$WaterTemp < mean_water_temp_overall])
+# Just get the sample size (n) for the warm group 
+n1 = warm_areas  %>% count()
+# Just get the sample size (n) for the cold group
+n2 = cold_areas %>% count()
+# Get the standard deviation for the warm variable (mean fork length) which we are interested in.
+s1 = warm_areas %>% summarize(sd(mean_fork_length, na.rm = TRUE))
+# Get the standard deviation for the cold variable (mean fork length) which we are interested in.
+s2 = cold_areas %>% summarize(sd(mean_fork_length, na.rm = TRUE))
+
+# Compute the standard error.
+# as.numeric makes it a value instead of a data point. 
+SE = as.numeric(sqrt(s1^2/n1 + s2^2/n2))
+
 ```
 
-The **test statistic** (z-score) tells us that the observed difference in the mean fork length for cold water and warm water sites is 118.53 standard deviations above the null hypothesis of zero difference. 
 
-The **95% confidence interval** tells us that there is a 95% probability that the range [6.941016,  7.174433] is likely to contain the true population parameter, which is the difference in juvenile Chinook salmon mean fork lengths across sites with colder water temperatures versus sites with warmer water temperatures.
+```{r}
+# And now the test statistic:
+zscore = (point_est - 0)/SE
+print(paste0("The test statistic (z-score) is ", zscore ,""))
 
-The high test statistic indicates that the distribution of the data might have a long tail due to outliers. We can visualize this by plotting the residuals. 
+# The observed mean fork lengths are 0.9343628 standard deviations away from our null hypothesis. 
+```
+
+
+```{r}
+crit_val = qnorm(0.025, lower.tail=FALSE)
+```
+
+
+```{r}
+# Now we can construct the 95% confidence interval:
+ci_lower = round(point_est - crit_val*SE, 2)
+ci_upper = round(point_est + crit_val*SE, 2)
+
+print(paste0("95% probability that [", ci_lower, ", ", ci_upper, "] contains the difference in mean fork lengths of juvenile Chinook salmon for sites with warmer mean water temperatures versus sites with colder mean water temperatures."))
+```
+
+The **test statistic** (z-score) tells us that the observed difference in mean fork lengths of juvenile Chinook salmon for sites with warmer mean water temperatures versus sites with colder mean water temperatures is 0.9343628 standard deviations above the null hypothesis of zero difference. 
+
+The **95% confidence interval** tells us that there is a 95% probability that [-2.3, 6.5] contains the difference in mean fork lengths of juvenile Chinook salmon for sites with warmer mean water temperatures versus sites with colder mean water temperatures.
+
 
 ```{r, fig.width=6, fig.height=3, fig.cap="The distribution of residuals for water temperature on juvenile Chinook salmon fork length."}
 library(modelr)
 
 # regression
-model_1 <- lm(ForkLength ~ WaterTemp, data = DJFMP_CHN_df)
+model_1 <- lm(mean_fork_length ~ mean_water_temp, data = DJFMP_CHN_df_mean)
 
 # create predictions and residuals
-predictions <- DJFMP_CHN_df %>% add_predictions(model_1) %>%
-  mutate(residuals = ForkLength - pred)
+predictions <- DJFMP_CHN_df_mean %>% add_predictions(model_1) %>%
+  mutate(residuals = mean_fork_length - pred)
 
 # histogram
 ggplot(data = predictions) + geom_histogram(aes(residuals), bins=25) +
   labs(title = "Residual Distribution") +
   theme_classic()
 ```
-The residuals appear to be mean zero based on the histogram above, but there is a long right tail in the residuals distribution, so it is definitely not a perfectly normal distribution. 
+The residuals appear to be roughly mean zero based on the histogram above, but there is a long right tail due to outliers in the residuals distribution, so it is definitely not a perfectly normal distribution.
 
 Next I will quantify the probability that the sample statistic differs from the null by using the `lm()` command to estimate the following simple linear regression:
 
-$$ \text{fork length}_i = \beta_0 + \beta_1 \text{water temperature}_i + \varepsilon_i $$
+$$ \text{mean fork length}_i = \beta_0 + \beta_1 \text{water temperature}_i + \varepsilon_i $$
 
 ```{r}
-lm(ForkLength ~ WaterTemp, data = DJFMP_CHN_df) %>% 
-  summary() %>% 
+lm(mean_fork_length ~ mean_water_temp, data = DJFMP_CHN_df_mean) %>% 
+  summary()%>% 
   xtable() %>% 
-  kable(caption = "Table 1: Linear Regression of Water Temperature on Juvenile Chinook Salmon Fork Length")
+  kable(caption = "Table 1: Linear Regression of Mean Water Temperature on 
+        Mean Fork Length of Juvenile Chinook Salmon")
 ```
 
-The p-value is much lower than 0.05, so we can reject the null hypothesis that there is no effect of water temperature on fork length. 
+The p-value is much lower than 0.05, so we can reject the null hypothesis that there is no effect of water temperature on mean fork length. 
 
-**Intercept:** On average, the predicted fork length of a juvenile Chinook salmon for a zero degree Celsius change in water temperature is 26.03122 (mm).  
+**Intercept:** On average, the predicted mean fork length of a juvenile Chinook salmon raised in zero degree Celsius water is -11.968201 (mm).  
 
-**Coefficient on water temperature (WaterTemp):** On average, the predicted fork length of a juvenile Chinook salmon increases by 1.72164 (mm) for every one degree Celsius increase in water temperature. 
+**Coefficient on water temperature (WaterTemp):** On average, the predicted mean fork length of juvenile Chinook salmon increases by 4.944056 (mm) for every one degree Celsius increase in water temperature. 
 
-**R-squared:** Our coefficient of determination ($R^2$) was 0.1102, which tells us that 11.02% of the variation in juvenile Chinook salmon fork lengths is explained by water temperature at the site. This is a relatively large amount of variation explained by just water temperature, which proves that water temperature does play a significant role in determining the fork length of juvenile Chinook salmon. 
+**R-squared:** Our coefficient of determination ($R^2$) was 0.02533, which tells us that 2.53% of the variation in the mean fork length of juvenile Chinook salmon is explained by the mean water temperature at the site. This is expected because there are many factors in addition to water temperature that play a role in determining the mean fork length of juvenile Chinook salmon. 
 
 
-```{r, fig.width=6, fig.height=3, fig.cap="A linear regression of the relationship between water temperature and juvenile Chinook salmon fork length in the San Francisco Estuary from 1976 to 2021."}
-forklength_vs_watertemp <- ggplot(data = DJFMP_CHN_df, 
-                                  aes(x = WaterTemp, 
-                                      y = ForkLength)) +
+```{r, fig.width=6, fig.height=3, fig.cap="A linear regression of the relationship between mean water temperature and mean fork length of juvenile Chinook salmon in the San Francisco Estuary from 1976 to 2021."}
+forklength_vs_watertemp <- ggplot(data = DJFMP_CHN_df_mean, 
+                                  aes(x = mean_water_temp, 
+                                      y = mean_fork_length)) +
   geom_point() +
   geom_smooth(method = 'lm', formula= y~x, se=FALSE, size=1) +
-  labs(title = "Relationship Between Juvenile Chinook Salmon Fork Length
-and Water Temperature",
-       x = "Water Temperature (degrees C) ",
-       y = "Fork Length (mm)") +
+  labs(title = "Relationship Between Juvenile Chinook Salmon Mean Fork Length
+and Mean Water Temperature",
+       x = "Mean Water Temperature (°C) ",
+       y = "Mean Fork Length (mm)") +
   theme_bw()
 
 forklength_vs_watertemp
 ```
 
-We can see the increase in juvenile Chinook salmon fork lengths as the water temperature increases from our linear regression line.
+From our linear regression line, we can see the increase in the mean fork length of juvenile Chinook salmon as the mean water temperature increases.
 
-Since $p-value = 2.2e-16 < 0.05$ we reject the null that there is no difference in the mean juvenile Chinook salmon fork length at sites with colder water temperatures versus sites with warmer water temperatures. We can say there is a statistically significant difference (at the 5% significance level) in the juvenile Chinook salmon mean fork length across sites with colder water temperatures versus sites with warmer water temperatures.
+Since $p-value = 1.675e-07 < 0.05$ we reject the null that there is no difference in the mean fork length of juvenile Chinook salmon at sites with colder mean water temperatures compared to sites with warmer mean water temperatures. We can say there is a statistically significant difference (at the 5% significance level) in the mean fork length of juvenile Chinook salmon across sites with colder mean water temperatures compared to sites with warmer mean water temperatures.
 
 # Conclusion and Next Steps
 
-Based on the findings of my analysis, the mean fork length of juvenile Chinook salmon in the San Francisco Estuary does significantly differ at sample sites with colder water temperatures compared to warmer water temperatures. The p-value from my linear regression was small enough to reject the null hypothesis that there is no difference in the mean juvenile Chinook salmon fork length at sites with colder water temperatures versus sites with warmer water temperatures.
+Based on the findings of my analysis, the mean fork length of juvenile Chinook salmon in the San Francisco Estuary does significantly differ at sample sites with colder mean water temperatures compared to warmer mean water temperatures. 
 
 In future analyses, I would investigate the difference the mean fork length of juvenile Chinook salmon at sites with high nutrient levels versus sites with low nutrient levels. Nutrient levels play a key role in determining the growth rate of juvenile Chinook salmon because insects and other food sources are often more abundant in rivers with warmer water water temperatures than colder water temperatures. Additionally, using a multiple linear regression to investigate the role that nutrient levels and water temperature have on the mean fork length of juvenile Chinook salmon could provide valuable information for the conservation and management of this threatened species.
 

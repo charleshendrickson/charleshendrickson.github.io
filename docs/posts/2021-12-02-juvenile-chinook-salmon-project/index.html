@@ -2531,7 +2531,7 @@ Figure 6: The distribution of residuals for water temperature on juvenile Chinoo
 </div>
 <p>The residuals appear to be roughly mean zero based on the histogram above, but there is a long right tail due to outliers in the residuals distribution, so it is definitely not a perfectly normal distribution.</p>
 <p>Next I will quantify the probability that the sample statistic differs from the null by using the <code>lm()</code> command to estimate the following simple linear regression:</p>
-<p><span class="math display">\[ \text{mean fork length}_i = \beta_0 + \beta_1 \text{water temperature}_i + \varepsilon_i \]</span></p>
+<p><span class="math display">\[ \text{mean fork length}_i = \beta_0 + \beta_1 \text{mean water temperature}_i + \varepsilon_i \]</span></p>
 <div class="layout-chunk" data-layout="l-body">
 <table>
 <caption><span id="tab:unnamed-chunk-16">Table 1: </span>Table 1: Linear Regression of Mean Water Temperature on Mean Fork Length of Juvenile Chinook Salmon</caption>
