@@ -158,7 +158,7 @@ forklength_vs_watertemp
 
 Density plot of juvenile Chinook salmon fork length ($y$-axis) as it relates to water temperature ($x$-axis).
 
-```{r, fig.width=6, fig.height=3, fig.cap="The denity of juvenile Chinook salmon fork lengths as it relates to water temperature at sample sites in the San Francisco Estuary from 1976 to 2021."}
+```{r, fig.width=6, fig.height=3, fig.cap="The density of juvenile Chinook salmon fork lengths as it relates to water temperature at sample sites in the San Francisco Estuary from 1976 to 2021."}
 # Determine where data density is relatively high versus low
 forklength_vs_watertemp_alpha <- ggplot(data = DJFMP_CHN_df, 
                                         aes(x = WaterTemp, 
@@ -175,7 +175,7 @@ forklength_vs_watertemp_alpha
 
 Density plot with `geom_bin2d()` of juvenile Chinook salmon fork length ($y$-axis) as it relates to water temperature ($x$-axis).
 
-```{r, fig.width=6, fig.height=3, fig.cap="The denity of juvenile Chinook salmon fork length as it relates to water temperature at sample sites in the San Francisco Estuary from 1976 to 2021."}
+```{r, fig.width=6, fig.height=3, fig.cap="The density of juvenile Chinook salmon fork length as it relates to water temperature at sample sites in the San Francisco Estuary from 1976 to 2021."}
 forklength_vs_watertemp_density <- ggplot(data = DJFMP_CHN_df, 
                                   aes(x = WaterTemp, 
                                       y = ForkLength)) +
@@ -195,25 +195,39 @@ forklength_vs_watertemp_density
 # Mean water temp of all sites 
 mean_water_temp_overall <- mean(DJFMP_CHN_df$WaterTemp)
 
-# Get the count of warm water sites vs cold water sites
-warm_count <- as.numeric(
-  count(DJFMP_CHN_df %>% filter(WaterTemp > mean_water_temp_overall)))
 
-cold_count <- as.numeric(
-  count(DJFMP_CHN_df %>% filter(WaterTemp < mean_water_temp_overall)))
+# Warm water sites
+warm_areas <- DJFMP_CHN_df %>% 
+          group_by(Location) %>% 
+          summarise(ForkLength, mean_water_temp = mean(WaterTemp)) %>% 
+  filter(mean_water_temp > mean_water_temp_overall) %>%
+  summarise(mean_fork_length = mean(ForkLength))
+        
 
+# Remove Veale Tract because it is an outlier
+warm_mean <- warm_areas %>% 
+  filter(Location != "Veale Tract") %>%
+  summarise(mean(mean_fork_length))
 
-# Mean fork length of warm water sites and cold water sites
-warm_sites <- DJFMP_CHN_df %>%
-  filter(WaterTemp > mean_water_temp_overall) %>%
-  summarise(mean = mean(ForkLength))
+warm_mean <- as.numeric(warm_mean)
   
-cold_sites <- DJFMP_CHN_df %>% 
-  filter(WaterTemp < mean_water_temp_overall) %>%
-  summarise(mean = mean(ForkLength))
+
+# Cold water sites
+cold_areas <- DJFMP_CHN_df %>% 
+          group_by(Location) %>% 
+          summarise(ForkLength, mean_water_temp = mean(WaterTemp)) %>% 
+  filter(mean_water_temp < mean_water_temp_overall) %>%
+  summarise(mean_fork_length = mean(ForkLength))
+
+
+cold_mean <- cold_areas %>%
+  summarise(mean(mean_fork_length))
+
+cold_mean <- as.numeric(cold_mean)
+
 
 # Difference in mean fork lengths for cold water sites vs. warm water sites 
-point_est = as.numeric(warm_sites - cold_sites)
+point_est = as.numeric(warm_mean - cold_mean)
 point_est
 
 ```
