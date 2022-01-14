@@ -320,7 +320,7 @@ The residuals appear to be roughly mean zero based on the histogram above, but t
 
 Next I will quantify the probability that the sample statistic differs from the null by using the `lm()` command to estimate the following simple linear regression:
 
-$$ \text{mean fork length}_i = \beta_0 + \beta_1 \text{water temperature}_i + \varepsilon_i $$
+$$ \text{mean fork length}_i = \beta_0 + \beta_1 \text{mean water temperature}_i + \varepsilon_i $$
 
 ```{r}
 lm(mean_fork_length ~ mean_water_temp, data = DJFMP_CHN_df_mean) %>% 
