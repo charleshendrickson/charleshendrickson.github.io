@@ -22,6 +22,7 @@ library(feasts)
 library(tsibble)
 library(xtable)
 library(knitr)
+library(here)
 ```
 
 # Research Question
@@ -57,8 +58,7 @@ Fork length is the length of sampled fish measured from the point of the mouth t
 # URL of data set: https://portal.edirepository.org/nis/metadataviewer?packageid=edi.244.8
 
 # Import data and convert it to a data frame
-DJFMP_df <- as.data.frame(
-  read.csv(file = "data/1976-2021_DJFMP_beach_seine_fish_and_water_quality_data.csv"))
+DJFMP_df <- as.data.frame(read.csv(here("../data/1976-2021_DJFMP_beach_seine_fish_and_water_quality_data.csv")))
 
 ```
 

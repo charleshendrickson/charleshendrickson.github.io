@@ -1,0 +1,168 @@
+---
+title: "Data Visualization with Tableau"
+description: |
+  For my EDS240 Data Visualization and Communication course in the MEDS program, I explored the different data visualizations I could produce using Tableau compared to RStudio. I used Moorea Coral Reef (MCR) Long Term Ecological Reasearch (LTER) project survey data on nitrogen content in algea and coral bleaching in Moorea, Frech Polynesia. This data is directly from my MEDS Capstone Project.
+author:
+  - name: Charles Hendrickson
+    url: {}
+date: 01-25-2022
+output:
+  distill::distill_article:
+    code_folding: yes
+    self_contained: false
+---
+
+
+```{r setup, include=TRUE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Data Visualization in Tableau versus RStudio
+
+Currently in the MEDS program, I am taking EDS240 Data Visualization and Communication. Our second assignment was to create two data visualizations using Tableau, which is a data visualization and business intelligence tool used for reporting and analyzing data. For this post, I want to compare my data visualizations in Tableau versus RStudio and determine which one communicated my data better. 
+
+![This is my first Tableau data visualization.](percent_bleached.jpg)
+
+# Loading the data 
+
+I used the here() package to load the data, which is from the Moorea Coral Reef - Long Term Ecological Research (MCR-LTER) project. For my MEDS Capstone Project, I will using MCR-LTER nitrogen content and coral bleaching survey data to build a web‐based application for visualizing spatial and temporal patterns of anthropogenic stressors on coral reefs in the lagoons of Moorea, French Polynesia. Overall, I want to better familiarize myself with the data creating data visualizations in Tableau and RStudio.
+
+```{r}
+# Load packages 
+library(naniar)
+library(here)
+library(tidyverse)
+
+```
+
+```{r}
+# Here is some of the notation I will be using in my file paths to load the data:
+
+# .    = this directory
+# ..   = the parent directory
+# ../  = the parent directory
+# ~/   = the user's home directory or the application's, in ASP
+# /    = the root directory
+
+# ../../ = the parent's parent directory
+```
+ 
+```{r}
+# Load data
+MCR_LTER_bleaching_data <- read.csv(here("../data/MCR_LTER_Burkepile_Adams_2016_Coral_Bleaching_Survey_20191023.csv"))
+
+MCR_LTER_Nitrogen_data <- read.csv(here("../data/MCR_LTER_Adam_EcolAp_N_summary_20200331.csv"))
+
+```
+
+# Investigating the data
+
+First, lets check out the initial NA counts and proportions for the MCR-LTER bleaching data. 
+
+```{r}
+# Returns NA count in your data frame or column
+n_miss(MCR_LTER_bleaching_data)
+
+# Returns number of complete values
+n_complete(MCR_LTER_bleaching_data)
+
+# Proportion or percentage of values that are NA
+prop_miss(MCR_LTER_bleaching_data) 
+
+pct_miss(MCR_LTER_bleaching_data)
+
+# A summary table of NA counts in your table
+miss_var_summary(MCR_LTER_bleaching_data)
+
+# A summary table of NAs by case (observation)
+miss_case_table(MCR_LTER_bleaching_data)
+```
+
+The summary table of NA counts in the data show us that there are 20 NA values in the  Percent_bleached column, which is 0.1955034% of the values in that column. Knowing this, we can safely remove these NA values from the Percent_bleached column. 
+
+```{r}
+# Remove NA values 
+MCR_LTER_bleaching_data_clean <- MCR_LTER_bleaching_data[!is.na(MCR_LTER_bleaching_data$Percent_bleached), ]
+
+# Confirm that NA's were removed from Percent_bleached column
+pct_miss(MCR_LTER_bleaching_data_clean$Percent_bleached)
+```
+
+Next, lets check out initial NA counts and proportions for MCR-LTER nitrogen summary data. 
+
+```{r}
+# Returns NA count in your data frame or column
+n_miss(MCR_LTER_Nitrogen_data)
+
+# Returns number of complete values
+n_complete(MCR_LTER_Nitrogen_data)
+
+# Proportion or percentage of values that are NA
+prop_miss(MCR_LTER_Nitrogen_data) 
+
+pct_miss(MCR_LTER_Nitrogen_data)
+
+# A summary table of NA counts in your table
+miss_var_summary(MCR_LTER_Nitrogen_data)
+
+# A summary table of NAs by case (observation)
+miss_case_table(MCR_LTER_Nitrogen_data)
+```
+
+The summary table of NA counts in the Nitrogen data show us that there are:
+
+19 NA values in the Percent_N_May column, which is 10% of the values in that column
+17 NA values in the Percent_N_July column, which is 8.94% of the values in that column
+6 NA values in the Percent_N_Jan column, which is 3.15% of the values in that column
+
+Knowing this, we can safely remove these NA values from each of these columns.
+
+```{r}
+# Remove NA values 
+MCR_LTER_Nitrogen_data_clean <- 
+  MCR_LTER_Nitrogen_data[!is.na(MCR_LTER_Nitrogen_data$Percent_N_May) &            !is.na(MCR_LTER_Nitrogen_data$Percent_N_Jan) &
+!is.na(MCR_LTER_Nitrogen_data$Percent_N_July),]
+
+# Confirm that NA's were removed from each column
+pct_miss(MCR_LTER_Nitrogen_data_clean$Percent_N_May)
+
+pct_miss(MCR_LTER_Nitrogen_data_clean$Percent_N_Jan)
+
+pct_miss(MCR_LTER_Nitrogen_data_clean$Percent_N_July)
+
+```
+
+# Wrangling the data 
+
+
+```{r}
+# Find the average percent of the colony area that was bleached for sites at each cardinal direction of shoreline (N, SE, SW) and for each species
+avg_percent_bleached <- MCR_LTER_bleaching_data_clean %>%
+  group_by(Habitat, Island_shore) %>% 
+  summarise(Avg_percent_bleached = mean(Percent_bleached))
+
+```
+
+
+```{r}
+# Find the average percent nitrogen in Turbinaria ornata for each month and habitat type  
+avg_percent_N <- MCR_LTER_Nitrogen_data_clean %>% 
+  group_by(Habitat) %>% 
+  summarise(jan_avg = mean(Percent_N_Jan), 
+            may_avg = mean(Percent_N_May), 
+            july_avg = mean(Percent_N_July))
+
+```
+
+
+# Exporting the data
+
+```{r}
+# Use write.csv to Export the DataFrame
+#write.csv(avg_percent_bleached,"/Users/charleshendrickson/Downloads/avg_percent_bleached.csv", row.names = FALSE)
+
+#write.csv(avg_percent_N,"/Users/charleshendrickson/Downloads/avg_percent_N.csv", row.names = FALSE)
+```
+
+
+
