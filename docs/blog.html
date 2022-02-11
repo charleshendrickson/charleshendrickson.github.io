@@ -86,26 +86,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>Charles Hendrickson: Blog</title>
+  <title>Charles Hendrickson: My Data Science Projects</title>
 
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Charles Hendrickson: Blog"/>
+  <meta property="og:title" content="Charles Hendrickson: My Data Science Projects"/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="Charles Hendrickson"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Charles Hendrickson: Blog"/>
+  <meta property="twitter:title" content="Charles Hendrickson: My Data Science Projects"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","listing"]}},"value":[{"type":"character","attributes":{},"value":["Blog"]},{"type":"character","attributes":{},"value":["posts"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","listing"]}},"value":[{"type":"character","attributes":{},"value":["My Data Science Projects"]},{"type":"NULL"},{"type":"character","attributes":{},"value":["posts"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2360,7 +2360,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Blog","authors":[]}
+{"title":"My Data Science Projects","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2518,11 +2518,11 @@ function init_posts_list() {
 
 
 
-<div class="posts-container posts-apply-limit l-page">
+<div class="posts-container posts-with-sidebar posts-apply-limit l-screen-inset">
 <div class="posts-list">
-<h1 class="posts-list-caption" data-caption="Blog">Blog</h1>
+<h1 class="posts-list-caption" data-caption="My Data Science Projects">My Data Science Projects</h1>
 <a href="posts/2022-01-25-data-visualization-with-tableau/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<script class="post-metadata" type="text/json">{"categories":["Tableau","R","tidyr","ggplot","naniar"]}</script>
 <div class="metadata">
 <div class="publishedDate">Jan. 25, 2022</div>
 <div class="dt-authors">
@@ -2530,12 +2530,18 @@ function init_posts_list() {
 </div>
 </div>
 <div class="thumbnail">
-<img/>
+<img src="posts/2022-01-25-data-visualization-with-tableau/percent_bleached.jpg"/>
 </div>
 <div class="description">
-<h2>Data Visualization with Tableau</h2>
-<div class="dt-tags"></div>
-<p>For my EDS240 Data Visualization and Communication course in the MEDS program, I explored the different data visualizations I could produce using Tableau compared to RStudio. I used Moorea Coral Reef (MCR) Long Term Ecological Reasearch (LTER) project survey data on nitrogen content in algea and coral bleaching in Moorea, Frech Polynesia. This data is directly from my MEDS Capstone Project.</p>
+<h2>Data Visualization with Tableau vs. R</h2>
+<div class="dt-tags">
+<div class="dt-tag">Tableau</div>
+<div class="dt-tag">R</div>
+<div class="dt-tag">tidyr</div>
+<div class="dt-tag">ggplot</div>
+<div class="dt-tag">naniar</div>
+</div>
+<p>For my EDS240 Data Visualization and Communication course in the MEDS program, I explored the different data visualizations I could produce using Tableau compared to RStudio. I used Moorea Coral Reef Long Term Ecological Reasearch (MCR LTER) site data on algea nitrogen content and coral bleaching observations in Moorea, Frech Polynesia. This data will be used in my MEDS Capstone Project. I also explored a helpful package called naniar for investigating missing data structures.</p>
 </div>
 </a>
 <a href="posts/2021-12-02-juvenile-chinook-salmon-project/" class="post-preview">
@@ -2573,6 +2579,37 @@ function init_posts_list() {
 </div>
 </a>
 </div>
+<div class="posts-sidebar">
+<div class="sidebar-section categories">
+<h3>Categories</h3>
+<ul>
+<li>
+<a href="#category:Articles">Articles</a>
+<span class="category-count">(3)</span>
+</li>
+<li>
+<a href="#category:ggplot">ggplot</a>
+<span class="category-count">(1)</span>
+</li>
+<li>
+<a href="#category:naniar">naniar</a>
+<span class="category-count">(1)</span>
+</li>
+<li>
+<a href="#category:R">R</a>
+<span class="category-count">(1)</span>
+</li>
+<li>
+<a href="#category:Tableau">Tableau</a>
+<span class="category-count">(1)</span>
+</li>
+<li>
+<a href="#category:tidyr">tidyr</a>
+<span class="category-count">(1)</span>
+</li>
+</ul>
+</div>
+</div>
 <div class="posts-more">
 <a href="#">More articles &raquo;</a>
 </div>
@@ -2580,7 +2617,7 @@ function init_posts_list() {
 <!--/radix_placeholder_article_listing-->
 
 <div class="d-title">
-<h1>Blog</h1>
+<h1>My Data Science Projects</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 
@@ -2588,6 +2625,11 @@ function init_posts_list() {
 
 
 <div class="d-article">
+<p><br></p>
+<p class="body">
+Welcome to my blog! I am excited to share my journey as an marine data scientist with you. My goal is to present my past and current projects, explore interesting data sets, and share new code. Enjoy.
+</p>
+<hr />
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

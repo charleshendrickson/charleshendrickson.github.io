@@ -1,4 +1,12 @@
 ---
-title: "Blog"
+title: "My Data Science Projects"
+description: |
 listing: posts
+---
+
+<br> 
+
+<p class="body">Welcome to my blog! I am excited to share my journey as an marine data scientist with you. My goal is to present my past and current projects, explore interesting data sets, and share new code. Enjoy.
+</p>
+
 ---

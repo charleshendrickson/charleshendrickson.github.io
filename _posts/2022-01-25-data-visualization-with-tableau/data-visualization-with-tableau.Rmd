@@ -1,15 +1,22 @@
 ---
-title: "Data Visualization with Tableau"
+title: "Data Visualization with Tableau vs. R"
 description: |
-  For my EDS240 Data Visualization and Communication course in the MEDS program, I explored the different data visualizations I could produce using Tableau compared to RStudio. I used Moorea Coral Reef (MCR) Long Term Ecological Reasearch (LTER) project survey data on nitrogen content in algea and coral bleaching in Moorea, Frech Polynesia. This data is directly from my MEDS Capstone Project.
+  For my EDS240 Data Visualization and Communication course in the MEDS program, I explored the different data visualizations I could produce using Tableau compared to RStudio. I used Moorea Coral Reef Long Term Ecological Reasearch (MCR LTER) site data on algea nitrogen content and coral bleaching observations in Moorea, Frech Polynesia. This data will be used in my MEDS Capstone Project. I also explored a helpful package called naniar for investigating missing data structures.
 author:
   - name: Charles Hendrickson
     url: {}
 date: 01-25-2022
+categories:
+  - Tableau
+  - R
+  - tidyr
+  - ggplot
+  - naniar
 output:
   distill::distill_article:
     code_folding: yes
     self_contained: false
+preview: percent_bleached.jpg
 ---
 
 
