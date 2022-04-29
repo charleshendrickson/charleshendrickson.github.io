@@ -16,17 +16,19 @@ site: distill::distill_website
 ---
 
 ### Hello 👋
-🌱 I'm Charles. I'm a Master's of Environmental Data Science (MEDS) student at the Bren School of Environmental Science and Management at UC Santa Barbara. My interests are studying marine biology and leveraging technology to better monitor the ocean. With my MEDS degree, I hope to advance scientific knowledge by extracting value from data and utilizing new technologies to monitor, model, and manage the Earth’s marine ecosystems at the same scale as the problems we face. 
+🌱 I'm Charles. I'm a Master's of Environmental Data Science (MEDS) student at the Bren School of Environmental Science and Management at UC Santa Barbara. My interests are studying marine biology and leveraging data science and technology to better monitor marine ecosystems. With my MEDS degree, I hope to advance scientific knowledge by extracting value from data and utilizing new technologies to monitor, model, and manage the Earth’s marine ecosystems at the same scale as the problems we face. 
 
 
 ---------------------------------------------------------------------------------------------
 
 ### Education
-- BS (2021): Marine Biology (University of California, Santa Cruz) 
+- BS (2021): Marine Biology (University of California, Santa Cruz)
+- MEDS (2022): Environmental Data Science (Bren School of Environmental Science and Management, University of California, Santa Barbara)
 
 ---------------------------------------------------------------------------------------------
 
 ### Marine and Data Science Experience
+ - (06/22 - 08/22): Stanford University Data Science for Social Good Fellowship
  - (06/20 - 08/20): Scripps Institution of Oceanography Undergraduate Research Fellowship
  - (01/20 - 03/20): National Marine Fisheries Service Internship (NOAA Fisheries Ecology Division)
  - (08/19 - 09/19): R/V Sikuliaq Student Crew Memeber - Science, Technology, Engineering And Math Student Experiences Aboard Ships 
