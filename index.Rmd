@@ -16,26 +16,24 @@ site: distill::distill_website
 ---
 
 ### Hello 👋
-🌱 I'm Charles. I'm a Master's of Environmental Data Science (MEDS) student at the Bren School of Environmental Science and Management at UC Santa Barbara. My interests are studying marine biology and leveraging data science and technology to better monitor marine ecosystems. With my MEDS degree, I hope to advance scientific knowledge by extracting value from data and utilizing new technologies to monitor, model, and manage the Earth’s marine ecosystems at the same scale as the problems we face. 
+🌱 I'm Charles. I'm a Sustainability Analyst at Chaminade University of Honolulu. I earned my Master's of Environmental Data Science (MEDS) from the Bren School of Environmental Science and Management at UC Santa Barbara in 2022. With my MEDS degree, I hope to make a positive impact on the world by extracting value from complex environmental data, finding solutions to sustainable development issues, and utilizing new technologies to monitor, model, and manage the Earth’s marine ecosystems.
 
 
 ---------------------------------------------------------------------------------------------
 
 ### Education
 - BS (2021): Marine Biology (University of California, Santa Cruz)
-- MEDS (2022): Environmental Data Science (Bren School of Environmental Science and Management, University of California, Santa Barbara)
+- MEDS (2022): Master of Environmental Data Science (Bren School of Environmental Science and Management, University of California, Santa Barbara)
 
 ---------------------------------------------------------------------------------------------
 
 ### Marine and Data Science Experience
- - (06/22 - 08/22): Stanford University Data Science for Social Good Fellowship
- - (06/20 - 08/20): Scripps Institution of Oceanography Undergraduate Research Fellowship
+ - (04/23 - present): Sustainability Analyst at Chaminade University of Honolulu
+ - (06/22 - 08/22): Stanford University Data Science for Social Good summer program
+ - (06/20 - 08/20): Scripps Institution of Oceanography Undergraduate Research Fellowship (SURF)
  - (01/20 - 03/20): National Marine Fisheries Service Internship (NOAA Fisheries Ecology Division)
- - (08/19 - 09/19): R/V Sikuliaq Student Crew Memeber - Science, Technology, Engineering And Math Student Experiences Aboard Ships 
+ - (08/19 - 09/19): NSF-STEMSEAS student crew member aboard the R/V Sikuliaq
  - (06/19 - 07/19): Volunteer Research Diver, Fiji Marine Conservation Expedition (Global Visions International)
-
-
-
 
 
 
