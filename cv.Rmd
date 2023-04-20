@@ -8,5 +8,5 @@ description: |
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-[**Download CV**](CV/2_page_resume.pdf)
+[**Download CV**](CV/resume.pdf)
 

@@ -11,7 +11,7 @@ navbar:
     - text: "MEDS Program"
       href: about.html
     - text: "Resume"
-      href: CV/personal_website_resume.pdf
+      href: CV/resume.pdf
     - text: "Blog"
       href: blog.html
   source_url: https://github.com/charleshendrickson/charleshendrickson.github.io
